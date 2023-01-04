@@ -4,10 +4,10 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from sqlalchemy.exc import IntegrityError
-from cryptography.utils import CryptographyDeprecationWarning
-
 import warnings
-warnings.filterwarnings(action='ignore',module='.*paramiko.*')
+from cryptography.utils import CryptographyDeprecationWarning
+warnings.filterwarnings("ignore", category=CryptographyDeprecationWarning)
+
 
 app = Flask("app")
 app.config.from_pyfile("default_config.py")
