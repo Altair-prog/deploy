@@ -6,6 +6,9 @@ from flask_migrate import Migrate
 from sqlalchemy.exc import IntegrityError
 from cryptography.utils import CryptographyDeprecationWarning
 
+import warnings
+warnings.filterwarnings(action='ignore',module='.*paramiko.*')
+
 app = Flask("app")
 app.config.from_pyfile("default_config.py")
 app.config.from_envvar("APP_SETTINGS", silent=True)
