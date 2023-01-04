@@ -7,7 +7,7 @@ COPY app.py .
 COPY migrations migrations
 COPY docker_config.py default_config.py
 
-CMD gunicorn --bind 0.0.0.0:80 --access-logfile='-' --capture-output app:app
+#CMD gunicorn --bind 0.0.0.0:80 --access-logfile='-' --capture-output app:app
 
 
 
