@@ -1,14 +1,9 @@
 from hashlib import md5
 
 from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
-import warnings
-from cryptography import CryptographyDeprecationWarning
-warnings.filterwarnings("ignore", category=CryptographyDeprecationWarning)
-
-
 
 app = Flask("app")
 app.config.from_pyfile("default_config.py")
