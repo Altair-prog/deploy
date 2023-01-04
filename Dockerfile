@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.10-slim
 
 WORKDIR /code
 COPY requirements.txt .
@@ -8,12 +8,3 @@ COPY migrations migrations
 COPY docker_config.py default_config.py
 
 CMD flask run -h 0.0.0.0 -p 80
-#CMD gunicorn --bind 0.0.0.0:80 --access-logfile='-' --capture-output app:app
-
-
-
-#FROM ubuntu:20.04
-
-#RUN apt update && apt install -y nginx
-
-#CMD nginx -g 'daemon off;'
