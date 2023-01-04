@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from sqlalchemy.exc import IntegrityError
+from cryptography.utils import CryptographyDeprecationWarning
 
 app = Flask("app")
 app.config.from_pyfile("default_config.py")
